@@ -6,7 +6,7 @@ import {cartAction} from '../Store/CartSlice';
 const CartButton = (props) => {
   const dispatch = useDispatch();
   const cartQty = useSelector((state)=>state.cart.itemsInCart)
-  const Qty = cartQty && cartQty.length
+  const Qty = (cartQty && cartQty.length) || 0
   
   const handleCartToggle=()=>{
     dispatch(cartAction.cartToggle())
